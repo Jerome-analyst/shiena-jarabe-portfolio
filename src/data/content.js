@@ -8,6 +8,9 @@
  * ============================================================
  */
 
+/** Resolves a file in /public against the deploy base path. */
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const profile = {
   name: "Shiena Jarabe",
   shortName: "Shiena Jarabe",
@@ -25,9 +28,11 @@ export const profile = {
     "Helping logistics teams stay organized, responsive, and on schedule.",
 
   // Drop your own photo at: public/images/profile.jpg
-  photo: "/images/profile.jpg",
+  // `asset()` prefixes the deploy base path so images resolve both locally
+  // and on GitHub Pages (which serves from a /repo-name/ subpath).
+  photo: asset("images/profile.jpg"),
   // Secondary photo used in the About section (can be the same file)
-  photoSecondary: "/images/profile.jpg",
+  photoSecondary: asset("images/profile.jpg"),
 
   trustIndicators: [
     "Licensed Customs Broker (LCB)",
