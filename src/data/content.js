@@ -27,12 +27,12 @@ export const profile = {
   tagline:
     "Helping logistics teams stay organized, responsive, and on schedule.",
 
-  // Drop your own photo at: public/images/profile.jpg
+  // Drop your own photo at: public/images/profile.png
   // `asset()` prefixes the deploy base path so images resolve both locally
   // and on GitHub Pages (which serves from a /repo-name/ subpath).
-  photo: asset("images/profile.jpg"),
+  photo: asset("images/profile.png"),
   // Secondary photo used in the About section (can be the same file)
-  photoSecondary: asset("images/profile.jpg"),
+  photoSecondary: asset("images/profile.png"),
 
   trustIndicators: [
     "Licensed Customs Broker (LCB)",

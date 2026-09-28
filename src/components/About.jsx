@@ -16,7 +16,8 @@ function SecondaryImage() {
         aria-hidden="true"
         className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-navy-100"
       />
-      <div className="relative overflow-hidden rounded-[2rem] bg-navy-100 shadow-xl shadow-navy-900/10 ring-1 ring-navy-100">
+      {/* Gradient backdrop reads intentionally behind a cut-out portrait. */}
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-b from-navy-100 via-navy-200 to-navy-300 shadow-xl shadow-navy-900/10 ring-1 ring-navy-200">
         {failed ? (
           <div className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 px-8 text-center">
             <ImageIcon className="h-12 w-12 text-navy-300" aria-hidden="true" />
@@ -33,7 +34,7 @@ function SecondaryImage() {
             src={profile.photoSecondary}
             onError={() => setFailed(true)}
             alt={`${profile.name} at work`}
-            className="aspect-[4/5] w-full object-cover"
+            className="aspect-[4/5] w-full object-contain object-bottom"
             loading="lazy"
           />
         )}

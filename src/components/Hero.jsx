@@ -71,7 +71,9 @@ function Portrait() {
       />
 
       <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-b from-navy-700 to-navy-900 shadow-2xl shadow-navy-950/60 ring-1 ring-white/10">
-        {/* Replace public/images/profile.jpg with your own portrait. */}
+        {/* Replace public/images/profile.png with your own portrait.
+            A transparent cut-out sits on the gradient; object-contain keeps
+            the full silhouette rather than cropping the shoulders. */}
         {failed ? (
           <div className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 text-center">
             <UserRound className="h-16 w-16 text-navy-300" aria-hidden="true" />
@@ -88,7 +90,7 @@ function Portrait() {
             src={profile.photo}
             onError={() => setFailed(true)}
             alt={`${profile.name}, ${profile.title}`}
-            className="aspect-[4/5] w-full object-cover"
+            className="aspect-[4/5] w-full object-contain object-bottom"
             loading="eager"
             width={720}
             height={900}
